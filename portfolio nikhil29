@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nikhil Koli | Graphic Designer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+html{scroll-behavior:smooth}
+body{background:#f9fafb;color:#333}
+
+/* NAVBAR */
+header{position:fixed;width:100%;top:0;background:#fff;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:15px 20px}
+nav h1{color:#6C63FF}
+nav ul{list-style:none;display:flex;gap:20px}
+nav a{text-decoration:none;color:#333;font-weight:500}
+nav a:hover{color:#6C63FF}
+.toggle{cursor:pointer;padding:8px 15px;border-radius:20px;background:#6C63FF;color:#fff;font-size:14px}
+
+/* HERO */
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+background:linear-gradient(135deg,#6C63FF,#2EC4B6);color:#fff}
+.hero h2{font-size:48px}
+.hero p{margin:15px 0 25px}
+.btn{padding:12px 28px;background:#fff;color:#6C63FF;border-radius:30px;text-decoration:none;font-weight:600}
+
+/* SECTIONS */
+section{padding:90px 20px;max-width:1200px;margin:auto}
+h2{text-align:center;margin-bottom:40px;font-size:36px}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about img{width:100%;border-radius:20px}
+
+/* PORTFOLIO */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.project{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.08)}
+.project img{width:100%;height:200px;object-fit:cover;transition:.4s}
+.project:hover img{transform:scale(1.08)}
+.project .content{padding:15px}
+
+/* TESTIMONIALS */
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.testimonial{background:#fff;padding:25px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.08)}
+
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.blog{background:#fff;padding:20px;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.08)}
+
+/* CONTACT */
+form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px}
+input,textarea{padding:12px;border-radius:8px;border:1px solid #ccc}
+button{padding:12px;border:none;border-radius:25px;background:#6C63FF;color:#fff;font-weight:600}
+
+/* ADMIN */
+#admin{background:#eef1ff;border-radius:20px;margin-top:60px}
+
+/* FOOTER */
+footer{background:#111;color:#fff;text-align:center;padding:20px}
+
+/* DARK MODE */
+body.dark{background:#121212;color:#eee}
+body.dark header,body.dark .project,body.dark .testimonial,body.dark .blog{background:#1e1e1e}
+body.dark nav a{color:#eee}
+
+/* ANIMATION */
+.reveal{opacity:0;transform:translateY(50px);transition:.8s}
+.reveal.active{opacity:1;transform:none}
+
+@media(max-width:768px){
+.about{grid-template-columns:1fr}
+.hero h2{font-size:36px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<h1>MyPortfolio</h1>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#testimonials">Testimonials</a></li>
+<li><a href="#blog">Blog</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="toggle" onclick="toggleDark()">Dark Mode</div>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h2>I’m Nikhil Koli</h2>
+<p>Graphic Designer • Brand Identity • UI/UX</p>
+<a href="#portfolio" class="btn">View Designs</a>
+</section>
+
+<section id="about" class="reveal">
+<h2>About Me</h2>
+<div class="about">
+<div>
+<p>I create visually compelling designs that elevate brands and improve user experience.</p>
+<p><b>Skills:</b> Photoshop, Illustrator, Figma, UI/UX, Branding, Web Design</p>
+</div>
+<img src="https://via.placeholder.com/500">
+</div>
+</section>
+
+<section id="portfolio" class="reveal">
+<h2>My Work</h2>
+<div class="portfolio-grid"></div>
+</section>
+
+<section id="testimonials" class="reveal">
+<h2>Testimonials</h2>
+<div class="testimonials">
+<div class="testimonial">"Outstanding creative work!" – Client A</div>
+<div class="testimonial">"Professional & fast delivery." – Client B</div>
+</div>
+</section>
+
+<section id="blog" class="reveal">
+<h2>Blog</h2>
+<div class="blog-grid">
+<div class="blog"><h3>Design Trends 2026</h3><p>Latest creative insights.</p></div>
+<div class="blog"><h3>My Design Process</h3><p>From idea to final product.</p></div>
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<h2>Contact Me</h2>
+<form id="contact-form">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<section id="admin">
+<h2>Admin Panel</h2>
+<form id="projectForm">
+<input id="title" placeholder="Project Title" required>
+<input id="category" placeholder="Category" required>
+<input id="image" placeholder="Image URL" required>
+<button>Add Project</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 Nikhil Koli</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+emailjs.init("YOUR_PUBLIC_KEY");
+
+document.getElementById("contact-form").addEventListener("submit",e=>{
+e.preventDefault();
+emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",e.target)
+.then(()=>alert("Message Sent!"));
+});
+
+function toggleDark(){document.body.classList.toggle("dark")}
+
+/* Reveal */
+window.addEventListener("scroll",()=>{
+document.querySelectorAll(".reveal").forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100)el.classList.add("active")
+});
+});
+
+/* Admin Panel */
+const grid=document.querySelector(".portfolio-grid");
+let projects=JSON.parse(localStorage.getItem("projects"))||[];
+
+function show(){
+grid.innerHTML="";
+projects.forEach(p=>{
+grid.innerHTML+=`<div class="project">
+<img src="${p.image}">
+<div class="content"><h3>${p.title}</h3><p>${p.category}</p></div>
+</div>`;
+});
+}
+document.getElementById("projectForm").addEventListener("submit",e=>{
+e.preventDefault();
+projects.push({title:title.value,category:category.value,image:image.value});
+localStorage.setItem("projects",JSON.stringify(projects));
+show();e.target.reset();
+});
+show();
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
